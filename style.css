@@ -22,14 +22,63 @@ header {
     color: rgb(202, 241, 11);
     z-index: 10;
 }
+/* For tablets (screens between 768px and 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-brand a {
+        font-size: 1.2em;
+    }
+}
+
+/* For mobile (screens less than 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-menu li a {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    section {
+        padding: 10px;
+    }
+}
+
+/* For larger screens (default styles apply, but you can add refinements) */
+@media (min-width: 1024px) {
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .navbar-menu {
+        flex-direction: row;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+
 
 .navbar {
-
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 15px 30px;
+
 }
 
 .navbar-brand a {
