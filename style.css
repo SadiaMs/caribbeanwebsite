@@ -1,14 +1,16 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
+    flex-wrap: wrap;
 }
-html.body{
+
+html,body{
     font-size: large;
-    background-color: #692203;
+    color:#2b0bfb;
+    background-color: #236adc;
     font-family: 'Times New Roman', Times, serif;
+    min-height: 100%; 
    
 
 }
@@ -21,64 +23,17 @@ header {
     background-image: url(footer.jpeg);
     color: rgb(202, 241, 11);
     z-index: 10;
+    width: 100%;
 }
-/* For tablets (screens between 768px and 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .navbar-menu {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navbar-brand a {
-        font-size: 1.2em;
-    }
-}
-
-/* For mobile (screens less than 768px) */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar-menu {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navbar-menu li a {
-        font-size: 0.9em;
-        padding: 10px;
-    }
-
-    section {
-        padding: 10px;
-    }
-}
-
-/* For larger screens (default styles apply, but you can add refinements) */
-@media (min-width: 1024px) {
-    .navbar {
-        justify-content: space-between;
-    }
-
-    .navbar-menu {
-        flex-direction: row;
-    }
-
-    section {
-        padding: 20px;
-    }
-}
-
 
 .navbar {
+
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     padding: 15px 30px;
-
+    width: 100%;
 }
 
 .navbar-brand a {
@@ -97,6 +52,8 @@ header {
     list-style-type: none;
     display: flex;
     gap: 15px;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: center;
 }
 
 
@@ -118,6 +75,9 @@ header {
 
 /* Parallax Section Styling */
 section {
+
+    min-height: 100vh;
+    padding: 2rem;
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -137,6 +97,9 @@ section {
      background-repeat: no-repeat;
     background-size: cover;
     background-repeat: no-repeat;
+    max-width: 100%;
+   
+    height: auto;
 
 
 }
@@ -196,14 +159,22 @@ footer p {
     font-weight: 500;
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     .navbar-menu {
         flex-direction: column;
         gap: 10px;
-        padding-top: 10px;
-        
     }
+    .navbar-menu li a {
+        padding: 10px;
+    }
+
+    section {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+
     
     .navbar-brand a {
         font-size: 1.2em;
@@ -214,7 +185,7 @@ footer p {
         font-size: 1.8em;
         padding: 15px;
     }
-}
+
      /* Blur Background Section Styling */  
  .section-dark{
     position: relative;
@@ -277,10 +248,10 @@ footer p {
 }
 
 .contact-us input[type="text"],
-.contact-us input[type="email"],
+  .contact-us input[type="email"],
 .contact-us textarea {
-    background-color: #222;
-    color: #022985;
+    background-color: #d0d5e8;
+    color: #102f6d;
     border: 1px solid #5305ed;
     padding: 10px;
     border-radius: 5px;
